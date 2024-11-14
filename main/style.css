@@ -1,0 +1,279 @@
+body {
+  max-width: 100vw;
+  height: auto;
+  background: rgb(236,151,127);
+  background: linear-gradient(180deg, rgba(236,151,127,1) 0%, rgba(190,100,80,1) 50%, rgba(142,89,69,1) 100%);
+  padding: 0;
+  margin: 0;
+}
+
+/*
+     Album
+*/
+
+#album {
+  max-width: 100vw;
+  height: auto;
+  box-shadow: 2px 4px 6px rgb(124, 221, 224);
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#album h1 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-family: monospace;
+  font-size: 35px;
+}
+
+#album #fotos {
+  margin-top: 60px;
+  max-width: 100vw;
+  max-height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.moldura {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(161, 104, 57);
+  border: 5px solid rgb(75, 45, 24);
+  display: flex;
+  align-items: center;
+  border-radius: 5%;
+  margin: 50px;
+}
+
+.foto {
+  width: 175px;
+  height: 175px;
+  position: relative;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: center;
+}
+
+#up {
+  object-position: top;
+}
+
+.moldura:hover {
+  animation: gravidade 4s ease-in-out infinite;
+}
+
+#imagem-ampliada {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#imagem-ampliada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*
+     PlayLists
+*/
+
+#musicas {
+  max-width: 100vw;
+  background-color: aliceblue;
+  box-shadow: 2px 4px 6px rgb(124, 221, 224);
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+#musicas #suas h1, #musicas #minhas h1, #musicas #nossa h1{
+  text-align: center;
+}
+
+#musicas #suas h1 {
+  position: relative;
+  font-family: monospace;
+  font-size: 35px;
+  
+}
+
+#musicas #minhas h1 {
+  position: relative;
+  font-family: monospace;
+  font-size: 35px;
+  
+}
+
+#musicas #nossa h1 {
+  position: relative;
+  font-family: monospace;
+  font-size:35px;
+
+} 
+
+.playlist {
+  position: relative;
+  border-radius: 12px;
+  width: 60%;
+  height: 352px;
+}
+
+#suas .playlist {
+  margin-left: 3%;
+}
+
+#minhas .playlist {
+  margin-left: 37%;
+}
+
+#nossa .playlist {
+  margin-left: 37%
+}
+
+/*
+     KeyFrames
+*/
+
+@keyframes visibilidade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes abrir {
+  from {
+    max-height: 1vh;
+  }
+  to {
+    max-height: 150vh;
+  }
+}
+
+@keyframes gravidade {
+  0% {
+    transform: translateY(0%);
+  }
+
+  25% {
+    transform: translateY(5%);
+  }
+
+  50% {
+    transform: translateY(-5%);
+  }
+
+  75% {
+    transform: translateY(7%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/*
+     ajustes em outras telas
+*/
+
+@media (max-width: 768px) {
+  /*Album*/
+  #album {
+    max-width: 100vw;
+  }
+
+  .moldura {
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+  }
+
+  #album h1 {
+    font-size: 30px;
+  }
+
+  .foto{
+    width: 120px;
+    height: 120px;
+  }
+
+  #imagem-ampliada {
+    width: 300px;
+    height: 300px;
+  }
+  
+  #imagem-ampliada img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /*Playlists*/
+
+  #musicas {
+    max-width: 100vw;
+  }
+
+  .playlist {
+    height: 176px;
+    width: 70%;
+  }
+
+  #minhas .playlist {
+    margin-left: 30%;
+  }
+
+  #musicas #suas h1 {
+    font-size: 25px;
+  }
+
+  #musicas #minhas h1 {
+    font-size: 25px;
+    
+  }
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  #album {
+    max-height: auto;
+  }
+
+  .moldura {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+  }
+
+  .foto{
+    width: 125px;
+    height: 125px;
+  }
+
+  #imagem-ampliada {
+    width: 300px;
+    height: 300px;
+  }
+  
+  #imagem-ampliada img {
+    object-fit: cover;
+    object-position: center;
+  } 
+} 
